@@ -5,7 +5,7 @@ function init()
 	if (typeof(Storage) !== "undefined")
 	{
 		var cur_time = new Date();
-		if (localStorage.BORN_TIME == "0")
+		if ( !localStorage.BORN_TIME || localStorage.BORN_TIME == "0")
 		{
 			//建立新存档
 			localStorage.BORN_TIME = cur_time;
