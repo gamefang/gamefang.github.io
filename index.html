@@ -1,65 +1,63 @@
+<!-- author:gamefang -->
+
 <!DOCTYPE html>
 <html>
 
-<head>
-<meta charset="utf-8">
-<title>gamefang</title>
-<style type="text/css">
-	body
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="gamefang">
+		<title>gamefang</title>
+		<script>
+		</script>
+		<style>
+			#title{
+					background-color:black;
+					color:white;
+					text-align:center;
+					}		
+			#text{
+					background-color:black;
+					color:white;
+					text-align:center;
+					padding:5px;
+					}
+		</style>
+	<script>
+	function startTime()
 	{
-	background-image: linear-gradient( #f76b1c -20%,#fad961,#f76b1c 120% );
+	var today=new Date()
+	var h=today.getHours()
+	var m=today.getMinutes()
+	var s=today.getSeconds()
+	// add a zero in front of numbers<10
+	m=checkTime(m)
+	s=checkTime(s)
+	document.getElementById('txt').innerHTML=h+":"+m+":"+s
+	t=setTimeout('startTime()',500)
 	}
-</style>
-<script>
-function clickCounter()
-{
-	if(typeof(Storage)!=="undefined")
+
+	function checkTime(i)
 	{
-		if (localStorage.clickcount)
-		{
-			localStorage.clickcount=Number(localStorage.clickcount)+1;
-		}
-		else
-		{
-			localStorage.clickcount=1;
-		}
-		document.getElementById("result").innerHTML=" 你已经点击了按钮 " + localStorage.clickcount + " 次 ";
-	}
-	else
-	{
-		document.getElementById("result").innerHTML="对不起，您的浏览器不支持 web 存储。";
-	}
-}
+	if (i<10) 
+	  {i="0" + i}
+	  return i
+	}	
+	</script>
+	</head>
 	
-function startTime()
-{
-var today=new Date()
-var h=today.getHours()
-var m=today.getMinutes()
-var s=today.getSeconds()
-// add a zero in front of numbers<10
-m=checkTime(m)
-s=checkTime(s)
-document.getElementById('txt').innerHTML=h+":"+m+":"+s
-t=setTimeout('startTime()',500)
-}
-
-function checkTime(i)
-{
-if (i<10) 
-  {i="0" + i}
-  return i
-}
-</script>
-</head>
-
-<body onload="startTime()">
-<div id="txt"></div>
-<p><button onclick="clickCounter()" type="button">点我！</button></p>
-<div id="result"></div>
-<p>点击该按钮查看计数器的增加。</p>
-<p>关闭浏览器选项卡(或窗口),重新打开此页面,计数器将继续计数(不是重置)。</p>
-
-</body>
+	<body onload="startTime()">
+		<div id="title">
+			<h1>游人方珩</h1>
+			<h2>网站建设中</h2>
+		</div>
+		<div id="text">
+			<h3 title="返回GitHub">作者：<a href="https://github.com/gamefang">gamefang</a></h3>
+			<div id="txt"></div>
+			<hr />
+			<a href="./twin_flames/splash.html" title="双生火焰" alt="双生火焰" >
+				<h3>h5练手作品：<b>双生火焰</b></h3>
+			</a>
+		</div>
+	</body>
 
 </html>
