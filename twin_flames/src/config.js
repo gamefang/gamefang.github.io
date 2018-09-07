@@ -1,0 +1,26 @@
+var cfg = {
+	sig_str:{
+		init_value:72000,
+		max_value:72000,
+		min_value:0,
+		change_ps:-2
+	},
+	entanglement:{
+		init_value:72000,
+		max_value:72000,
+		min_value:0,
+		change_ps:-1
+	},
+	rate:{
+		init_value:72000,
+		max_value:72000,
+		min_value:0,
+		change_ps:-1
+	},
+	entropy:{
+		init_value:0,
+		max_value:72000,
+		min_value:0,
+		change_ps:1
+	}
+}
