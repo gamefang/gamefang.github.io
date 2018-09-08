@@ -221,7 +221,7 @@ function time_warp()
 function ether_input()
 //注入以太功能
 {
-	change_entropy(20*60*60)
+	change_entropy(-20*60*60)
 	//localStorage.ENTROPY = Math.max( Number(localStorage.RATE) - 20 , 0 )
 	msg='成功注入以太'
 	refresh(msg)
