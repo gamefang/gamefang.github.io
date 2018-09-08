@@ -11,11 +11,10 @@ function init()
 		{
 			init_save_data(cur_time)
 		}
-		var save_time = new Date(localStorage.BORN_TIME)
+		var save_time = new Date(localStorage.LAST_TIME)
 		var delta_time = cur_time.getTime() - save_time.getTime()
 		timestr = my_parse_time(delta_time)
 		document.getElementById('CONN_DAYS').innerHTML = '已建立连接' + timestr
-		localStorage.LAST_TIME = cur_time
 		time_pass_event(delta_time)
 	}
 	else
@@ -29,6 +28,7 @@ function init_save_data(born_time)
 //建立新存档
 {
 	localStorage.BORN_TIME = born_time
+	localStorage.LAST_TIME = born_time
 	localStorage.SIG_STR = cfg.sig_str.init_value
 	localStorage.ENTANGLEMENT = cfg.entanglement.init_value
 	localStorage.RATE = cfg.rate.init_value
@@ -162,11 +162,11 @@ function check_ending()
 		msg='很不幸，与双生火焰的连接已断开'
 		refresh(msg)
 		alert('已断开连接！')
-		localStorage.BORN_TIME = ""
+		localStorage.BORN_TIME = ''
 	}
 }
 
-function refresh(msg="")
+function refresh(msg='')
 //显示数据刷新
 {
 	document.getElementById('SIG_STR').innerHTML = parseInt( Number(localStorage.SIG_STR),10 )
