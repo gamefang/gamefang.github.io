@@ -13,3 +13,9 @@ function test_day_past()
 	time_pass_event(ms)
 	refresh(msg)
 }
+
+function test_storage_output()
+{
+	msg=JSON.stringify(localStorage)
+	refresh(msg)
+}

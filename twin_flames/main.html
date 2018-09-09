@@ -8,39 +8,75 @@
 		<title>Twin Flames</title>
 	</head>
 
-	<body onload="init()" style="background-color:black;color:white;text-align:center">
+	<body onload="init()" style="background-color:black;color:white;text-align:left">
+		<h1>
+		<div id="NAME"></div>
+		</h1>
+		<table border="1" cellpadding="10">
+			<tr>
+			  <th>属性</th>
+			  <td>当前值</td>
+			  <td>最佳值</td>
+			</tr>
+			<tr>
+			  <th title="信号强度为0时，将中断与双生火焰的连接。">
+			  <img src="https://png.icons8.com/ultraviolet/12/000000/high-connection.png">
+			  信号强度
+			  </th>
+			  <td><div id="SIG_STR"></div></td>
+			  <td>100</td>
+			</tr>
+			<tr>
+			  <th title="纠缠度过低时，部分功能将失效。">
+			  <img src="https://png.icons8.com/ultraviolet/16/000000/meeting.png">
+			  纠缠度
+			  </th>
+			  <td><div id="ENTANGLEMENT"></div></td>
+			  <td>1000</td>
+			</tr>
+			<tr>
+			  <th title="保持较高的速率是维持连接的必要条件。">
+			  <img src="https://png.icons8.com/ultraviolet/16/000000/speedometer.png">
+			  速率
+			  </th>
+			  <td><div id="RATE"></div></td>
+			  <td>300000</td>
+			</tr>		
+			<tr>
+			  <th title="熵过高时会影响许多正常功能。">
+			  <img src="https://png.icons8.com/dusk/16/000000/dirty.png">
+			  熵
+			  </th>
+			  <td><div id="ENTROPY"></div></td>
+			  <td>0</td>
+			</tr>
+			<tr>
+			  <th title="以太是进行一切活动的必要条件。">
+			  <img src="https://png.icons8.com/color/16/000000/ethereum.png">
+			  以太
+			  </th>
+			  <td><div id="ETHER"></div></td>
+			  <td>999999</td>
+			</tr>				
+		</table>
 		<p>
-		<button onclick="test_day_past()" type="button">过天</button>
-		<button onclick="test_hour_past()" type="button">一小时</button>
 		<button onclick="gra_wave()" type="button">引力波</button>
 		<button onclick="time_warp()" type="button">扭曲时间</button>
 		<button onclick="ether_input()" type="button">注入以太</button>
 		</p>
 		<p>
 		<div id="msg"></div>
-		<p>
+		</p>
 		<div id="CONN_DAYS"></div>
-		<table border="1" cellpadding="10">
-			<tr>
-			  <th>信号强度</th>
-			  <td><div id="SIG_STR"></div></td>
-			</tr>
-			<tr>
-			  <th>纠缠度</th>
-			  <td><div id="ENTANGLEMENT"></div></td>
-			</tr>
-			<tr>
-			  <th>速率</th>
-			  <td><div id="RATE"></div></td>
-			</tr>		
-			<tr>
-			  <th>熵</th>
-			  <td><div id="ENTROPY"></div></td>
-			</tr>			
-		</table>
+		<p>
 		<a href="./splash.html">
 		<img src="./res/btn_return.png" title="返回" alt="返回" />
 		</a>
+		</p>
+		<hr />
+		<button onclick="test_day_past()" type="button">过天</button>
+		<button onclick="test_hour_past()" type="button">一小时</button>		
+		<button onclick="test_storage_output()" type="button">打印数据</button>	
 		<script src="./src/config.js"></script>
 		<script src="./src/scripts.js"></script>
 		<script src="./src/test.js"></script>

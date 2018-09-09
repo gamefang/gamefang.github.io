@@ -11,11 +11,14 @@ function init()
 		{
 			init_save_data(cur_time)
 		}
-		var save_time = new Date(localStorage.LAST_TIME)
-		var delta_time = cur_time.getTime() - save_time.getTime()
-		timestr = my_parse_time(delta_time)
-		document.getElementById('CONN_DAYS').innerHTML = '已建立连接' + timestr
-		time_pass_event(delta_time)
+		else
+		{
+			var save_time = new Date(localStorage.LAST_TIME)
+			var delta_time = cur_time.getTime() - save_time.getTime()
+			timestr = my_parse_time(delta_time)
+			document.getElementById('CONN_DAYS').innerHTML = '已建立连接' + timestr
+			time_pass_event(delta_time)
+		}
 	}
 	else
 	{
@@ -33,6 +36,8 @@ function init_save_data(born_time)
 	localStorage.ENTANGLEMENT = cfg.entanglement.init_value
 	localStorage.RATE = cfg.rate.init_value
 	localStorage.ENTROPY = cfg.entropy.init_value
+	localStorage.ETHER = cfg.ether.init_value
+	localStorage.NAME = cfg.name
 	msg='成功与双生火焰建立连接'
 }
 
@@ -67,8 +72,40 @@ function time_pass_event(delta_time)
 	change_entanglement(seconds)
 	change_rate(seconds)
 	change_entropy(seconds)
+	change_ether(seconds)
 	refresh()
 	check_ending()
+}
+
+function check_ending()
+//结束条件检测
+{
+	if ( !Number(localStorage.SIG_STR) )
+	//信号强度为0，结束游戏
+	{
+		msg='很不幸，与双生火焰的连接已断开'
+		refresh(msg)
+		alert('已断开连接！')
+		localStorage.BORN_TIME = ''
+	}
+}
+
+function refresh(msg='')
+//显示数据刷新
+{
+	document.getElementById('SIG_STR').innerHTML = parseInt( Number(localStorage.SIG_STR) * cfg.sig_str.show_ratio,10 )
+	document.getElementById('ENTANGLEMENT').innerHTML = parseInt( Number(localStorage.ENTANGLEMENT) * cfg.entanglement.show_ratio,10 )
+	document.getElementById('RATE').innerHTML = parseInt( Number(localStorage.RATE) * cfg.rate.show_ratio,10 )
+	document.getElementById('ENTROPY').innerHTML = parseInt( Number(localStorage.ENTROPY) * cfg.entropy.show_ratio,10 )
+	document.getElementById('ETHER').innerHTML = parseInt( Number(localStorage.ETHER) * cfg.ether.show_ratio,10 )
+	document.getElementById('NAME').innerHTML = localStorage.NAME
+	document.getElementById('msg').innerHTML = msg
+}
+
+function change_name(new_name)
+//改名
+{
+	localStorage.NAME = new_name
 }
 
 function change_sig_str(seconds)
@@ -153,67 +190,80 @@ function change_entropy(seconds)
 	}
 }
 
-function check_ending()
-//结束条件检测
+function change_ether(seconds)
+//以太值按秒改变
 {
-	if ( !Number(localStorage.SIG_STR) )
-	//信号强度为0，结束游戏
+	new_value = Number(localStorage.ETHER) + seconds * cfg.ether.change_ps
+	if (new_value >= cfg.ether.max_value)
 	{
-		msg='很不幸，与双生火焰的连接已断开'
-		refresh(msg)
-		alert('已断开连接！')
-		localStorage.BORN_TIME = ''
+		localStorage.ETHER = cfg.ether.max_value
 	}
-}
-
-function refresh(msg='')
-//显示数据刷新
-{
-	document.getElementById('SIG_STR').innerHTML = parseInt( Number(localStorage.SIG_STR),10 )
-	document.getElementById('ENTANGLEMENT').innerHTML = parseInt( localStorage.ENTANGLEMENT,10 )
-	document.getElementById('RATE').innerHTML = parseInt( localStorage.RATE,10 )
-	document.getElementById('ENTROPY').innerHTML = parseInt( localStorage.ENTROPY,10 )
-	document.getElementById('msg').innerHTML = msg
+	else if (new_value <= cfg.ether.min_value)
+	{
+		localStorage.ETHER = cfg.ether.min_value
+	}
+	else
+	{
+		localStorage.ETHER = new_value
+	}
 }
 
 function gra_wave()
 //引力波功能
 {
-	var rnd_value = Math.ceil(Math.random()*5)
-	change_entanglement(rnd_value*60*60)
-	//localStorage.ENTANGLEMENT = Number(localStorage.ENTANGLEMENT) + Math.ceil(Math.random()*5)
-	//localStorage.ENTANGLEMENT = Math.min( Number(localStorage.ENTANGLEMENT) , 20 )
-	msg='成功发送引力波'
-	var rnd_value = Math.ceil(Math.random()*100)
-	if ( rnd_value<=50 )
-	//50%提升熵
+	if ( Number(localStorage.ETHER) < cfg.gra_wave.ether_cost )
 	{
-		change_entropy(1*60*60)
-		msg='\n熵提升了'
-	}		
+		msg='需要至少' + cfg.gra_wave.ether_cost + '以太！'
+	}
+	else if ( Number(localStorage.ENTANGLEMENT) === cfg.entanglement.max_value )
+	{
+		msg='纠缠度已满，无需释放引力波！'
+	}
+	else
+	{
+		localStorage.ETHER = Number(localStorage.ETHER) - cfg.gra_wave.ether_cost
+		var rnd_value = Math.ceil(Math.random()*5)
+		change_entanglement(-rnd_value*60*60)
+		msg='成功发送引力波，纠缠度提升了！'
+		var rnd_value = Math.ceil(Math.random()*100)
+		if ( rnd_value<=50 )
+		//50%提升熵
+		{
+			change_entropy(1*60*60)
+			msg+='<br />引力波引发了熵增。'
+		}
+	}
 	refresh(msg)
 }
 
 function time_warp()
 //扭曲时间功能
 {
-	if ( Number(localStorage.ENTANGLEMENT) > cfg.entanglement.max_value/2 )
+	if ( Number(localStorage.ETHER) < cfg.time_warp.ether_cost )
+	{
+		msg='需要至少' + cfg.time_warp.ether_cost + '以太！'
+	}
+	else if ( Number(localStorage.RATE) === cfg.rate.max_value )
+	{
+		msg='速率已满，无需扭曲时间！'
+	}
+	else if ( Number(localStorage.ENTANGLEMENT) <= cfg.entanglement.max_value/2 )
 	//纠缠度过半才能使用扭曲时间
 	{
-		change_rate(8*60*60)
-		//localStorage.RATE = Math.min( Number(localStorage.RATE) + 8 , 20 )
-		msg='成功扭曲时间'
+		msg='纠缠度过低，无法扭曲时间'
+	}
+	else
+	{
+		localStorage.ETHER = Number(localStorage.ETHER) - cfg.time_warp.ether_cost
+		change_rate(-8*60*60)
+		msg='成功扭曲时间，速率提升了！'
 		var rnd_value = Math.ceil(Math.random()*100)
 		if ( rnd_value<=80 )
 		//80%提升熵
 		{
 			change_entropy(1*60*60)
-			msg='\n熵提升了'			
+			msg+='<br />扭曲时间的同时触发了熵增。'			
 		}		
-	}
-	else
-	{
-		msg='纠缠度过低，无法扭曲时间'
 	}
 	refresh(msg)
 }
@@ -221,8 +271,19 @@ function time_warp()
 function ether_input()
 //注入以太功能
 {
-	change_entropy(-20*60*60)
-	//localStorage.ENTROPY = Math.max( Number(localStorage.RATE) - 20 , 0 )
-	msg='成功注入以太'
+	if ( Number(localStorage.ETHER) < cfg.ether_input.ether_cost )
+	{
+		msg='需要至少' + cfg.ether_input.ether_cost + '以太！'
+	}
+	else if ( Number(localStorage.ENTROPY) === cfg.entropy.min_value )
+	{
+		msg='熵已清空，无需注入以太！'
+	}
+	else
+	{
+		localStorage.ETHER = Number(localStorage.ETHER) - cfg.ether_input.ether_cost
+		change_entropy(-20*60*60)
+		msg='成功注入以太，熵被清空了！'
+	}
 	refresh(msg)
 }
