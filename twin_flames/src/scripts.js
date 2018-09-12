@@ -6,7 +6,7 @@ function init()
 {
 	if (typeof(Storage) !== 'undefined')
 	{
-		var cur_time = new Date();
+		var cur_time = new Date()
 		if ( !localStorage.BORN_TIME )
 		{
 			init_save_data(cur_time)
@@ -38,6 +38,7 @@ function init_save_data(born_time)
 	localStorage.ENTROPY = cfg.entropy.init_value
 	localStorage.ETHER = cfg.ether.init_value
 	localStorage.NAME = cfg.name
+	localStorage.MSGS = ''	//所有对话信息
 	msg='成功与双生火焰建立连接'
 }
 
@@ -83,10 +84,26 @@ function check_ending()
 	if ( !Number(localStorage.SIG_STR) )
 	//信号强度为0，结束游戏
 	{
-		msg='很不幸，与双生火焰的连接已断开'
+		msg='很不幸，与' + localStorage.NAME + '的连接已断开'
 		refresh(msg)
 		alert('已断开连接！')
 		localStorage.BORN_TIME = ''
+		die_log()
+	}
+}
+
+function die_log()
+//死亡记录
+{
+	var cur_time = new Date()
+	var die_log = localStorage.NAME + '#' + localStorage.BORN_TIME + '#' + cur_time + '#' + localStorage.MSGS + '#'
+	if (localStorage.DIE_INFOS)
+	{
+		localStorage.DIE_INFOS += die_log
+	}
+	else
+	{
+		localStorage.DIE_INFOS = die_log
 	}
 }
 
@@ -221,19 +238,54 @@ function gra_wave()
 	}
 	else
 	{
-		localStorage.ETHER = Number(localStorage.ETHER) - cfg.gra_wave.ether_cost
-		var rnd_value = Math.ceil(Math.random()*5)
-		change_entanglement(-rnd_value*60*60)
-		msg='成功发送引力波，纠缠度提升了！'
-		var rnd_value = Math.ceil(Math.random()*100)
-		if ( rnd_value<=50 )
-		//50%提升熵
+		if(!message.value)
 		{
-			change_entropy(1*60*60)
-			msg+='<br />引力波引发了熵增。'
+			msg='请输入要发送的信息！'
+		}
+		else
+		{
+			localStorage.ETHER = Number(localStorage.ETHER) - cfg.gra_wave.ether_cost
+			var rnd_value = Math.ceil(Math.random()*5)
+			change_entanglement(-rnd_value*60*60)
+			msg='成功发送引力波，纠缠度提升了！'
+			var rnd_value = Math.ceil(Math.random()*100)
+			if ( rnd_value<=50 )
+			//50%提升熵
+			{
+				change_entropy(1*60*60)
+				msg+='<br />引力波引发了熵增。'
+			}
+			//此句以后不再转回来
+			var cur_time = new Date()
+			localStorage.MSGS += String(cur_time) + '|'
+			localStorage.MSGS += message.value + '|'
+			result = get_tuling_msg(message.value)
 		}
 	}
 	refresh(msg)
+}
+
+function get_tuling_msg(message,botkey='e544098faa0449a7ae39d3c2951b2a98')
+//获取图灵机器人对话信息
+{
+	if (message)
+	{
+		var myurl = 'http://www.tuling123.com/openapi/api?key=' + botkey + '&info=' + message
+		console.log(myurl)
+		$.ajax(
+				{
+					type:'get',
+					url:myurl,
+					success:function(body,heads,status)
+							{
+								console.log(body)
+								alert(body.text)
+								localStorage.MSGS += body.text + '|'
+								return body.text
+							}
+				}
+			)
+	}	
 }
 
 function time_warp()
