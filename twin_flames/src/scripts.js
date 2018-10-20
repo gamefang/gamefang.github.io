@@ -252,54 +252,19 @@ function gra_wave()
 	}
 	else
 	{
-		if(!message.value)
+		localStorage.ETHER = Number(localStorage.ETHER) - cfg.gra_wave.ether_cost
+		var rnd_value = Math.ceil(Math.random()*5)
+		change_entanglement(-rnd_value*60*60)
+		msg='成功发送引力波，纠缠度提升了！'
+		var rnd_value = Math.ceil(Math.random()*100)
+		//50%提升熵
+		if ( rnd_value<=50 )
 		{
-			msg='请输入要发送的信息！'
-		}
-		else
-		{
-			localStorage.ETHER = Number(localStorage.ETHER) - cfg.gra_wave.ether_cost
-			var rnd_value = Math.ceil(Math.random()*5)
-			change_entanglement(-rnd_value*60*60)
-			msg='成功发送引力波，纠缠度提升了！'
-			var rnd_value = Math.ceil(Math.random()*100)
-			//50%提升熵
-			if ( rnd_value<=50 )
-			{
-				change_entropy(1*60*60)
-				msg+='<br />引力波引发了熵增。'
-			}
-			//此句以后不再转回来
-			var cur_time = new Date()
-			localStorage.MSGS += String(cur_time) + '|'
-			localStorage.MSGS += message.value + '|'
-			//result = get_tuling_msg(message.value)
+			change_entropy(1*60*60)
+			msg+='<br />引力波引发了熵增。'
 		}
 	}
 	refresh(msg)
-}
-
-//获取图灵机器人对话信息
-function get_tuling_msg(message,botkey='e544098faa0449a7ae39d3c2951b2a98')
-{
-	if (message)
-	{
-		var myurl = 'http://www.tuling123.com/openapi/api?key=' + botkey + '&info=' + message
-		console.log(myurl)
-		$.ajax(
-				{
-					type:'get',
-					url:myurl,
-					success:function(body,heads,status)
-							{
-								console.log(body)
-								alert(body.text)
-								localStorage.MSGS += body.text + '|'
-								return body.text
-							}
-				}
-			)
-	}	
 }
 
 //扭曲时间功能
