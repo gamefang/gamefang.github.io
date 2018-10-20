@@ -1,23 +1,25 @@
-//游戏系统信息
+//播报信息
 var msg = ''
 
-function init()
-//初始进入游戏
+//快速访问html对象
+function $(Nid)
+{
+	return document.getElementById(Nid)
+}
+
+//开始游戏
+function game()
 {
 	if (typeof(Storage) !== 'undefined')
 	{
 		var cur_time = new Date()
 		if ( !localStorage.BORN_TIME )
 		{
-			init_save_data(cur_time)
+			new_game(cur_time)
 		}
 		else
 		{
-			var save_time = new Date(localStorage.LAST_TIME)
-			var delta_time = cur_time.getTime() - save_time.getTime()
-			timestr = my_parse_time(delta_time)
-			document.getElementById('CONN_DAYS').innerHTML = '已建立连接' + timestr
-			time_pass_event(delta_time)
+			continue_game(cur_time)
 		}
 	}
 	else
@@ -27,8 +29,8 @@ function init()
 	refresh(msg)
 }
 
-function init_save_data(born_time)
-//建立新存档
+//新游戏，建立存档
+function new_game(born_time)
 {
 	localStorage.BORN_TIME = born_time
 	localStorage.LAST_TIME = born_time
@@ -42,10 +44,22 @@ function init_save_data(born_time)
 	msg='成功与双生火焰建立连接'
 }
 
-function my_parse_time(timeint)
+//继续游戏，读取存档
+function continue_game(cur_time)
+{
+	localStorage.LAST_TIME = cur_time
+	var save_time = new Date(localStorage.LAST_TIME)
+	var delta_time = cur_time.getTime() - save_time.getTime()
+	timestr = my_parse_time(delta_time)
+	console.log('delta_time:',delta_time)
+	$('CONN_DAYS').innerHTML = '已建立连接：' + timestr
+	time_pass_event(delta_time)
+}
+
 //时间格式化
 //@param timeint: 数值型时间，单位毫秒
 //@return: 格式化时间字符串 n天n小时
+function my_parse_time(timeint)
 {
 	var hour_time = timeint/1000/60/60
 	if (hour_time>=24)
@@ -64,9 +78,9 @@ function my_parse_time(timeint)
 	}
 }
 
-function time_pass_event(delta_time)
 //时间流逝事件
 //@param delta_time: 数值型时间，单位毫秒
+function time_pass_event(delta_time)
 {
 	var seconds = delta_time / 1000
 	change_sig_str(seconds)
@@ -78,11 +92,11 @@ function time_pass_event(delta_time)
 	check_ending()
 }
 
-function check_ending()
 //结束条件检测
+function check_ending()
 {
-	if ( !Number(localStorage.SIG_STR) )
 	//信号强度为0，结束游戏
+	if ( !Number(localStorage.SIG_STR) )
 	{
 		msg='很不幸，与' + localStorage.NAME + '的连接已断开'
 		refresh(msg)
@@ -92,8 +106,8 @@ function check_ending()
 	}
 }
 
-function die_log()
 //死亡记录
+function die_log()
 {
 	var cur_time = new Date()
 	var die_log = localStorage.NAME + '#' + localStorage.BORN_TIME + '#' + cur_time + '#' + localStorage.MSGS + '#'
@@ -107,29 +121,29 @@ function die_log()
 	}
 }
 
-function refresh(msg='')
 //显示数据刷新
+function refresh(msg='')
 {
-	document.getElementById('SIG_STR').innerHTML = parseInt( Number(localStorage.SIG_STR) * cfg.sig_str.show_ratio,10 )
-	document.getElementById('ENTANGLEMENT').innerHTML = parseInt( Number(localStorage.ENTANGLEMENT) * cfg.entanglement.show_ratio,10 )
-	document.getElementById('RATE').innerHTML = parseInt( Number(localStorage.RATE) * cfg.rate.show_ratio,10 )
-	document.getElementById('ENTROPY').innerHTML = parseInt( Number(localStorage.ENTROPY) * cfg.entropy.show_ratio,10 )
-	document.getElementById('ETHER').innerHTML = parseInt( Number(localStorage.ETHER) * cfg.ether.show_ratio,10 )
-	document.getElementById('NAME').innerHTML = localStorage.NAME
-	document.getElementById('msg').innerHTML = msg
+	$('SIG_STR').innerHTML = parseInt( Number(localStorage.SIG_STR) * cfg.sig_str.show_ratio,10 )
+	$('ENTANGLEMENT').innerHTML = parseInt( Number(localStorage.ENTANGLEMENT) * cfg.entanglement.show_ratio,10 )
+	$('RATE').innerHTML = parseInt( Number(localStorage.RATE) * cfg.rate.show_ratio,10 )
+	$('ENTROPY').innerHTML = parseInt( Number(localStorage.ENTROPY) * cfg.entropy.show_ratio,10 )
+	$('ETHER').innerHTML = parseInt( Number(localStorage.ETHER) * cfg.ether.show_ratio,10 )
+	$('NAME').innerHTML = localStorage.NAME
+	$('msg').innerHTML = msg
 }
 
-function change_name(new_name)
 //改名
+function change_name(new_name)
 {
 	localStorage.NAME = new_name
 }
 
-function change_sig_str(seconds)
 //信号强度值按秒改变
+function change_sig_str(seconds)
 {
-	if ( Number(localStorage.RATE) )
 	//速率非0时不处理
+	if ( Number(localStorage.RATE) )
 	{
 		return
 	}
@@ -148,11 +162,11 @@ function change_sig_str(seconds)
 	}
 }
 
-function change_entanglement(seconds)
 //纠缠度值按秒改变
+function change_entanglement(seconds)
 {
-	if ( Number(localStorage.ENTROPY) > cfg.entropy.max_value/2 )
 	//熵值过半时，纠缠度降低速度翻倍
+	if ( Number(localStorage.ENTROPY) > cfg.entropy.max_value/2 )
 	{
 		seconds *= 2
 	}
@@ -171,8 +185,8 @@ function change_entanglement(seconds)
 	}
 }
 
-function change_rate(seconds)
 //速率值按秒改变
+function change_rate(seconds)
 {
 	new_value = Number(localStorage.RATE) + seconds * cfg.rate.change_ps
 	if (new_value >= cfg.rate.max_value)
@@ -189,8 +203,8 @@ function change_rate(seconds)
 	}
 }
 
-function change_entropy(seconds)
 //熵值按秒改变
+function change_entropy(seconds)
 {
 	new_value = Number(localStorage.ENTROPY) + seconds * cfg.entropy.change_ps
 	if (new_value >= cfg.entropy.max_value)
@@ -207,8 +221,8 @@ function change_entropy(seconds)
 	}
 }
 
-function change_ether(seconds)
 //以太值按秒改变
+function change_ether(seconds)
 {
 	new_value = Number(localStorage.ETHER) + seconds * cfg.ether.change_ps
 	if (new_value >= cfg.ether.max_value)
@@ -225,8 +239,8 @@ function change_ether(seconds)
 	}
 }
 
-function gra_wave()
 //引力波功能
+function gra_wave()
 {
 	if ( Number(localStorage.ETHER) < cfg.gra_wave.ether_cost )
 	{
@@ -249,8 +263,8 @@ function gra_wave()
 			change_entanglement(-rnd_value*60*60)
 			msg='成功发送引力波，纠缠度提升了！'
 			var rnd_value = Math.ceil(Math.random()*100)
-			if ( rnd_value<=50 )
 			//50%提升熵
+			if ( rnd_value<=50 )
 			{
 				change_entropy(1*60*60)
 				msg+='<br />引力波引发了熵增。'
@@ -259,14 +273,14 @@ function gra_wave()
 			var cur_time = new Date()
 			localStorage.MSGS += String(cur_time) + '|'
 			localStorage.MSGS += message.value + '|'
-			result = get_tuling_msg(message.value)
+			//result = get_tuling_msg(message.value)
 		}
 	}
 	refresh(msg)
 }
 
-function get_tuling_msg(message,botkey='e544098faa0449a7ae39d3c2951b2a98')
 //获取图灵机器人对话信息
+function get_tuling_msg(message,botkey='e544098faa0449a7ae39d3c2951b2a98')
 {
 	if (message)
 	{
@@ -288,8 +302,8 @@ function get_tuling_msg(message,botkey='e544098faa0449a7ae39d3c2951b2a98')
 	}	
 }
 
-function time_warp()
 //扭曲时间功能
+function time_warp()
 {
 	if ( Number(localStorage.ETHER) < cfg.time_warp.ether_cost )
 	{
@@ -299,8 +313,8 @@ function time_warp()
 	{
 		msg='速率已满，无需扭曲时间！'
 	}
-	else if ( Number(localStorage.ENTANGLEMENT) <= cfg.entanglement.max_value/2 )
 	//纠缠度过半才能使用扭曲时间
+	else if ( Number(localStorage.ENTANGLEMENT) <= cfg.entanglement.max_value/2 )
 	{
 		msg='纠缠度过低，无法扭曲时间'
 	}
@@ -310,8 +324,8 @@ function time_warp()
 		change_rate(-8*60*60)
 		msg='成功扭曲时间，速率提升了！'
 		var rnd_value = Math.ceil(Math.random()*100)
-		if ( rnd_value<=80 )
 		//80%提升熵
+		if ( rnd_value<=80 )
 		{
 			change_entropy(1*60*60)
 			msg+='<br />扭曲时间的同时触发了熵增。'			
@@ -320,8 +334,8 @@ function time_warp()
 	refresh(msg)
 }
 
-function ether_input()
 //注入以太功能
+function ether_input()
 {
 	if ( Number(localStorage.ETHER) < cfg.ether_input.ether_cost )
 	{

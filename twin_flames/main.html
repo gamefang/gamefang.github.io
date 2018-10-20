@@ -8,10 +8,13 @@
 		<title>Twin Flames</title>
 	</head>
 
-	<body onload="init()" style="background-color:black;color:white;text-align:left">
+	<body onload="game()" style="background-color:black;color:white;text-align:left">
 		<h1>
 		<div id="NAME"></div>
 		</h1>
+		<p>
+		<div id="CONN_DAYS"></div>
+		</p>		
 		<table border="1" cellpadding="10">
 			<tr>
 			  <th>属性</th>
@@ -60,7 +63,7 @@
 			</tr>				
 		</table>
 		<p>
-		信息<input type="text" id="message">		
+		<!--信息<input type="text" id="message">-->		
 		<button onclick="gra_wave()" type="button">引力波</button>
 		</p>
 		<p>
@@ -72,7 +75,6 @@
 		<p>
 		<div id="msg"></div>
 		</p>
-		<div id="CONN_DAYS"></div>
 		<p>
 		<a href="./splash.html">
 		<img src="./res/btn_return.png" title="返回" alt="返回" />
