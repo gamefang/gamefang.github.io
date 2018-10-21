@@ -47,10 +47,10 @@ function new_game(born_time)
 //继续游戏，读取存档
 function continue_game(cur_time)
 {
-	localStorage.LAST_TIME = cur_time
 	var save_time = new Date(localStorage.LAST_TIME)
 	var delta_time = cur_time.getTime() - save_time.getTime()
 	timestr = my_parse_time(delta_time)
+	localStorage.LAST_TIME = cur_time
 	console.log('delta_time:',delta_time)
 	$('CONN_DAYS').innerHTML = '已建立连接：' + timestr
 	time_pass_event(delta_time)
