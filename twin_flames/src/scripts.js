@@ -49,11 +49,13 @@ function continue_game(cur_time)
 {
 	var save_time = new Date(localStorage.LAST_TIME)
 	var delta_time = cur_time.getTime() - save_time.getTime()
-	timestr = my_parse_time(delta_time)
 	localStorage.LAST_TIME = cur_time
 	console.log('delta_time:',delta_time)
-	$('CONN_DAYS').innerHTML = '已建立连接：' + timestr
 	time_pass_event(delta_time)
+	var born_time = new Date(localStorage.BORN_TIME)
+	var passed_time = cur_time.getTime() - born_time.getTime()
+	timestr = my_parse_time(passed_time)
+	$('CONN_DAYS').innerHTML = '已建立连接：' + timestr
 }
 
 //时间格式化
