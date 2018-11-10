@@ -1,69 +1,167 @@
-<!-- author:gamefang -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="author" content="gamefang">
+  <title>游人坊</title>
+  <link rel="stylesheet" type="text/css" href="style.css" media="all" />
+  <link rel="stylesheet" media="all" href="style/css/prettyPhoto.css" type="text/css" />
+  <link rel="stylesheet" media="all" href="style/css/tipTip.css" type="text/css" />
+  <link rel="stylesheet" href="style/css/nivo-slider.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="style/css/nivostyle.css" type="text/css" media="screen" />
+  <link rel="shortcut icon" href="./twin_flames/res/splash.jpg" type="image/x-icon" />
+  <script type="text/javascript" src="style/js/jquery-1.5.min.js"></script>
+  <script type="text/javascript" src="style/js/quicksand.js"></script>
+  <script type="text/javascript" src="style/js/scripts.js"></script>
+  <script type="text/javascript" src="style/js/jquery.prettyPhoto.js"></script>
+  <script type="text/javascript" src="style/js/twitter.min.js"></script>
+  <script src="style/js/jquery.form.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+//<![CDATA[
+  $(document).ready(function() {
+  $('#submitform').ajaxForm({
+  target: '#error',
+  success: function() {
+  $('#error').fadeIn('slow');
+  }
+  });
+  });
+  //]]>
+  </script>
+  <!--[if IE 7]><link rel="stylesheet" type="text/css" href="style/css/ie7.css" media="all" /><![endif]--> 
+</head>
 
-	<head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-		<meta name="author" content="gamefang">
-		<title>gamefang</title>
-        <script type="text/javascript">
-        	window.onload=function(){
-        		window.location.href="http://localhost:8262/index.html";
-        	}
-        </script>
-		<link rel="shortcut icon" href="./twin_flames/res/splash.jpg" type="image/x-icon" />		
-		<style>
-			#title{
-					background-color:black;
-					color:white;
-					text-align:center;
-					}		
-			#text{
-					background-color:black;
-					color:white;
-					text-align:center;
-					padding:5px;
-					}
-		</style>
-	<script>
-	function startTime()
-	{
-	var today=new Date()
-	var h=today.getHours()
-	var m=today.getMinutes()
-	var s=today.getSeconds()
-	// add a zero in front of numbers<10
-	m=checkTime(m)
-	s=checkTime(s)
-	document.getElementById('txt').innerHTML=h+":"+m+":"+s
-	t=setTimeout('startTime()',500)
-	}
+<body>
+  <a name="top" id="top"></a>
 
-	function checkTime(i)
-	{
-	if (i<10) 
-	  {i="0" + i}
-	  return i
-	}	
-	</script>
-	</head>
-	
-	<body onload="startTime()">
-		<div id="title">
-			<h1>游人方珩</h1>
-			<h2>网站建设中</h2>
-		</div>
-		<div id="text">
-			<h3 title="返回GitHub">作者：<a href="https://github.com/gamefang">gamefang</a></h3>
-			<div id="txt"></div>
-			<hr />
-			<a href="./twin_flames/splash.html" title="双生火焰" alt="双生火焰" >
-				<h3>h5练手作品：<b>双生火焰</b></h3>
-			</a>
-		</div>
-	</body>
+  <!-- Top Strip -->
 
+  <div id="strip"></div>
+
+  <div id="container">
+    <!-- Begin Header -->
+
+    <div id="header">
+      <img src="style/images/logo.png" width="248" height="134" alt="" class="logo" /> 
+    </div><!-- End Header -->
+
+    <div id="wrapper">
+      <!-- Left Menu Links -->
+
+      <div id="smoothmenu1">
+        <ul id="tab-menu" class="ddsmoothmenu">
+          <li>简介</li>
+
+          <li>项目</li>
+
+        </ul>
+		
+		<!-- 简介开始 -->
+        <div class="tab-content">
+          <div class="tab show">
+            <h1>归园</h1>
+            <p>
+				我梦见我不再做梦<br/>
+				就这么坐着<br/>
+				听思想默然流淌<br/>
+				<br/>
+				你弯腰收获的背影<br/>
+				只趁我熟睡之际<br/>
+				静悄悄躺进土里<br/>
+			</p>
+			
+            <!--Bullet List -->
+
+            <ul class="bullet">
+              <li>分享<a href="#" title="万物皆与游戏相关" class="link">与游戏相关的内容</a>。</li>
+
+              <li>分享<a href="#" title="万物皆与游戏无关" class="link">与游戏无关的内容</a>。</li>
+            </ul>
+          </div><!-- 简介结束 -->
+
+          <!-- 项目开始 -->
+          <div class="tab">
+            <h1>项目</h1>
+
+           
+              <div>
+				<p>部分项目介绍</p>
+				
+				<div class="clear"></div><br />
+				
+                <div class="one-half">
+                  <a href="./twin_flames/res/splash.jpg" rel="prettyPhoto" title="双生火焰"><img src=
+                  "./twin_flames/res/splash.jpg" alt="" width="330" height="210" class="featured-left" /></a>
+                </div>
+
+                <div class="one-half last">
+                  <h3>双生火焰</h3>
+                  <p>简单的html练手习作</p>
+					<button><a href="./twin_flames/splash.html">进入游戏</a></button>
+                </div>
+
+                <div class="clear"></div>
+                <div class="divider3"></div>
+
+                <div class="one-half">
+                  <a href="./twin_flames/res/splash.jpg" rel="prettyPhoto" title="敬请期待"><img src=
+                  "./twin_flames/res/splash.jpg" alt="" width="330" height="210" class="featured-left" /></a>
+                </div>
+
+                <div class="one-half last">
+                  <h3>敬请期待</h3>
+                  <p>敬请期待</p>
+					<button><a href="#">敬请期待</a></button>
+                </div>
+				
+              </div>
+			  
+              <!-- 2nd Page Starts - Slide Thumbs -->
+
+
+                <div id="thumbs">
+                  <span></span>
+                </div><!-- End Slide Thumbs -->
+
+              </div>
+            
+            
+          </div><!-- 项目结束 -->
+
+          <div class="clearfix"></div>
+        </div><!-- End -->
+        <!-- TWITTER - ADD YOUR USERNAME IN ID INSTEAD OF MINE -->
+		<div class="clear"></div>
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="push"></div>
+  </div><!-- Begin Footer -->
+
+  <div id="footer-wrapper">
+    <div id="footer">
+      <div id="footer-content">
+        <!-- Begin Copyright -->
+
+        <div id="copyright">
+          <p>&copy; Copyright <script type="text/javascript">
+//<![CDATA[
+          var d = new Date()
+          document.write(d.getFullYear())
+          //]]>
+          </script> GAMEFANG</p>
+        </div>
+
+        <p id="back-top"><a href="#top" class="tip_top" title="回到顶部">回到顶部 &uarr;</a></p><!-- End Copyright -->
+        
+
+      </div>
+    </div>
+  </div>
+</body>
 </html>
+
