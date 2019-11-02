@@ -1,14 +1,14 @@
-game:
+tag1:
   name: game
 
-study:
+tag2:
   name: study
 
 music:
   name: music
 
-misc:
+tag4:
   name: misc
 
-literature:
+tag5:
   name: literature
