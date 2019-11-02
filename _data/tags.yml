@@ -1,0 +1,11 @@
+game:
+  name: game
+
+study:
+  name: study
+
+music:
+  name: music
+
+misc:
+  name: misc
