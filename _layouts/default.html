@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<link rel="stylesheet" href="/assets/css/atom-one-light.css">
     {% if page.title or page.title == 'me' %}
-        <title>{{ page.title }}</title>
+        <title>{{ page.title }} {{ site.name }}</title>
 		<link rel="stylesheet" type="text/css" href="/assets/css/002.css">
     {% else %}
         <title>{{ site.name }}</title>
@@ -93,11 +93,11 @@
 	<script src="/assets/js/002.js"></script>
 	<div class="footer">
 		<p>&copy; Copyright <script type="text/javascript">
-			  //<![CDATA[
 	          var d = new Date()
 	          document.write(d.getFullYear())
-	          //]]>
-	          </script>, <a href="https://github.com/gamefang" target="_blank">gamefang</a>.Created using <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>,theme author <a href="http://github.com/h01000110" target="_blank">h01000110 (hi)</a>.</p>
+	          </script>, <a href="https://github.com/gamefang" target="_blank">gamefang</a><br/>
+			  Created using <a href="https://jekyllrb.com/" target="_blank">Jekyll</a><br/>
+			  Theme author <a href="http://github.com/h01000110" target="_blank">h01000110 (hi)</a></p>
 	</div>
 </body>
 </html>
