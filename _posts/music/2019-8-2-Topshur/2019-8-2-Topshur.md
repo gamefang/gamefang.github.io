@@ -1,7 +1,7 @@
 ---
-layout: default  
-title: "Topshur曲谱"  
-tags: music  
+layout: default
+title: "Topshur曲谱"
+tags: music
 ---
 
 > 所有资料传承自呼麦大篷车2015北京陶布秀尔班欧尼尔老师
