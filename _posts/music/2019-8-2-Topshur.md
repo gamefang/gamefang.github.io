@@ -1,7 +1,7 @@
 ---
-layout: default
-title: "Topshur曲谱"
-tags: music
+title: Topshur曲谱
+key: 190802
+tags: 音乐
 ---
 
 > 所有资料传承自呼麦大篷车2015北京陶布秀尔班欧尼尔老师
@@ -14,8 +14,8 @@ tags: music
     - 上扫：右手向上扫双弦
     - “伏”：右手下扫後，用虎口贴住琴弦禁音
 
-![Topshur_1_0001](/assets/res/2019-8-2-Topshur/Topshur_1_0001.png)
-![Topshur_1_0002](/assets/res/2019-8-2-Topshur/Topshur_1_0002.png)
+![Topshur_1_0001](/res/190802/Topshur_1_0001.png)
+![Topshur_1_0002](/res/190802/Topshur_1_0002.png)
 ---
 
 ## Topshur基础音阶练习
@@ -28,44 +28,44 @@ tags: music
     - ③：名指按弦
     - ④：小指按弦
 
-![Topshur_2](/assets/res/2019-8-2-Topshur/Topshur_2.png)
+![Topshur_2](/res/190802/Topshur_2.png)
 ---
 
 ## 萨吾尔登舞曲一
 - 此曲共弹奏3遍，其中1~9小节循环两遍，其余部分为第三遍
 - ①等出现在高音部表示按外弦，出现在低音部表示按内弦
 
-![Topshur_3](/assets/res/2019-8-2-Topshur/Topshur_3.png)
+![Topshur_3](/res/190802/Topshur_3.png)
 ---
 
 ## 打板拨弦练习
 - 打板技法：左手某指在下一音位快速击弦後离开发声两次，类似古琴掩掐起或虚掩带起
 - 拨弦技法：左手某指在按弦的情况下拨弦离开发声一次，类似古琴掐起或带起
 
-![Topshur_4](/assets/res/2019-8-2-Topshur/Topshur_4.png)
+![Topshur_4](/res/190802/Topshur_4.png)
 ---
 
 ## 萨吾尔登舞曲二
 
-![Topshur_5](/assets/res/2019-8-2-Topshur/Topshur_5.png)
+![Topshur_5](/res/190802/Topshur_5.png)
 ---
 
 ## 萨吾尔登舞曲三
 
-![Topshur_6](/assets/res/2019-8-2-Topshur/Topshur_6.png)
+![Topshur_6](/res/190802/Topshur_6.png)
 ---
 
 ## 萨吾尔登舞曲四
 
-![Topshur_7](/assets/res/2019-8-2-Topshur/Topshur_7.png)
+![Topshur_7](/res/190802/Topshur_7.png)
 ---
 
 ## 萨吾尔登舞曲五
 
-![Topshur_8](/assets/res/2019-8-2-Topshur/Topshur_8.png)
+![Topshur_8](/res/190802/Topshur_8.png)
 ---
 
 ## 萨吾尔登舞曲六
 
-![Topshur_8](/assets/res/2019-8-2-Topshur/Topshur_9.png)
+![Topshur_8](/res/190802/Topshur_9.png)
 ---
