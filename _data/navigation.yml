@@ -1,9 +1,9 @@
 header:
   - titles:
-      en:       Archive
-      zh:       归类
-      zh-Hans:  归类
-      zh-Hant:  歸類
+      en:       Categories
+      zh:       分类
+      zh-Hans:  分类
+      zh-Hant:  分類
     url:        /archive.html
   - titles:
       en:       About

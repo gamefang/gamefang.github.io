@@ -3,6 +3,8 @@ title: Topshur曲谱
 key: 190802
 tags: 音乐
 show_title: true
+articles:
+  excerpt_type: html
 ---
 
 > 所有资料传承自呼麦大篷车2015北京陶布秀尔班欧尼尔老师
@@ -16,6 +18,7 @@ show_title: true
     - “伏”：右手下扫後，用虎口贴住琴弦禁音
 
 ![Topshur_1_0001](/res/190802/Topshur_1_0001.png)
+<!--more-->
 ![Topshur_1_0002](/res/190802/Topshur_1_0002.png)
 ---
 
