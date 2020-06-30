@@ -11,3 +11,9 @@ header:
       zh-Hans:  关于
       zh-Hant:  關於
     url:        /about.html
+  - titles:
+      en:       Favorites
+      zh:       收藏
+      zh-Hans:  收藏
+      zh-Hant:  收藏
+    url:        /favorites.html
