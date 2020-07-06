@@ -39,6 +39,7 @@ key: page-favorites
 - [RMMV打包](https://tieba.baidu.com/p/5745386698)：RM MV——如何将游戏打包成APK形式。
 - [YEP插件教程](https://www.bilibili.com/video/av3727626/?p=21)：Yanfly插件教学视频。
 - [Renpy中文空间](https://www.renpy.cn/forum.php)：Renpy中文论坛。
+- [Fungus游戏框架](https://fungusgames.com/)：Unity冒险游戏框架。
 
 # 素材
 - [100font](https://www.100font.com/)：收集所有免费商用字体。
@@ -76,6 +77,7 @@ key: page-favorites
 - [Python魔术方法详解](https://www.jb51.net/article/61141.htm)：Python魔术方法详解
 - [Pyinstaller编译反编译](https://blog.csdn.net/HW140701/article/details/93494869)：PyInstaller：编译exe与反编译
 - [Unity常用API（感觉挺实用的）](https://blog.csdn.net/qq_38112703/article/details/79705874)：Unity常用API（感觉挺实用的）
+- [Renpy安卓权限](https://tieba.baidu.com/p/6693580938?lp=5028&mo_device=1&is_jingpost=0&pn=0&)：如何让Ren‘py支持安卓10，支持操作高危权限
 
 # 音乐
 ## 钢琴
