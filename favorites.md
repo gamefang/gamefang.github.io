@@ -22,6 +22,7 @@ show_edit_on_github: true
 - [视频转gif](https://ezgif.com/video-to-gif)：ezgif，各类视频在线转gif。
 - [Convertio](https://convertio.co/zh/webm-converter/)：在线转化几乎所有格式，包括webm转化。
 - [md转适配微信公众号](http://blog.didispace.com/tools/online-markdown/)：markdown转微信公众号格式。
+- [word转markdown](https://word2md.com/)：在线word转markdown，文件名不能用中文。
 
 # 游戏
 - [shorttrip](https://alexanderperrin.com.au/paper/shorttrip/)：一个开火车的游戏，可在线玩。
