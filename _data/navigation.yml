@@ -17,3 +17,9 @@ header:
       zh-Hans:  收藏
       zh-Hant:  收藏
     url:        /favorites.html
+  - titles:
+      en:       Collections
+      zh:       转载
+      zh-Hans:  转载
+      zh-Hant:  轉載
+    url:        /my_collection/collections.html

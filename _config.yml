@@ -173,7 +173,7 @@ exclude:
   - README.md
   - CNAME
   - .gitignore
-  - my_collection
+  - my_1984
   
 defaults:
   - scope:
