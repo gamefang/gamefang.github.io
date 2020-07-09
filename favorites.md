@@ -6,6 +6,7 @@ titles:
   zh-Hans: 收藏
   zh-Hant: 收藏
 key: page-favorites
+show_edit_on_github: true
 ---
 
 # 日常
@@ -109,3 +110,7 @@ key: page-favorites
 # 历史
 - [各少数民族历史](http://cbrx.0715.cn/thread-591327-1-1.html)：匈奴、东胡 、突厥 、蒙古、 契丹 、女真 …终于全部搞懂了！
 - [家谱海](http://www.familytreesea.com/public-zone)：各类历史人物家谱图示。
+- [中国历史地图](https://www.ditushu.com/book/33/release/viewer)：矢量化谭其骧历史地图
+- [发现中国](https://www.ageeye.cn/)：各类历史地图
+- [中国历代人物传记资料库](https://projects.iq.harvard.edu/chinesecbdb)：检索各类历史知识的数据库
+- [ChinaKnowledge](http://www.chinaknowledge.de/)：中国历史文化资料库
