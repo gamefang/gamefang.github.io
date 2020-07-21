@@ -17,6 +17,7 @@ show_edit_on_github: true
 
 # 工具
 - [在线汉语字典](http://xh.5156edu.com/bs.php)：查汉字词。
+- [萌典](https://www.moedict.tw/)：汉字字典，附带英法德。
 - [google翻译](https://translate.google.cn/)：google翻译。
 - [颜色提取](https://htmlcolorcodes.com/color-picker/)：转化十六进制、RGB、HSL、CMYK颜色。
 - [视频转gif](https://ezgif.com/video-to-gif)：ezgif，各类视频在线转gif。
@@ -115,3 +116,4 @@ show_edit_on_github: true
 - [发现中国](https://www.ageeye.cn/)：各类历史地图
 - [中国历代人物传记资料库](https://projects.iq.harvard.edu/chinesecbdb)：检索各类历史知识的数据库
 - [ChinaKnowledge](http://www.chinaknowledge.de/)：中国历史文化资料库
+- [全历史时间地图](https://www.allhistory.com/map)：跨地域历史事件展示及其它

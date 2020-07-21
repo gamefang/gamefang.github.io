@@ -10,4 +10,4 @@ show_edit_on_github: true
 ---
 
 # 历史
-- [白登之围：陈平秘计的秘密](https://github.com/gamefang/gamefang.github.io/blob/master/my_collection/白登之围：陈平秘计的秘密.md)
+- [白登之围：陈平秘计的秘密](白登之围：陈平秘计的秘密.md)
