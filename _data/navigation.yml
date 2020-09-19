@@ -23,3 +23,9 @@ header:
       zh-Hans:  转载
       zh-Hant:  轉載
     url:        /my_collection/collections.html
+  - titles:
+      en:       TongJian
+      zh:       通鉴
+      zh-Hans:  通鉴
+      zh-Hant:  通鑒
+    url:        /zizhitongjian
