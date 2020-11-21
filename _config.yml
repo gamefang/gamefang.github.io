@@ -86,7 +86,7 @@ mathjax: # false (default), true
 mathjax_autoNumber: # false (default), true
 
 ## Mermaid
-mermaid: true # false (default), true
+mermaid: # false (default), true
 
 ## Chart
 chart: # false (default), true
