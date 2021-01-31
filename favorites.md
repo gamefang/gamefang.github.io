@@ -11,9 +11,8 @@ show_edit_on_github: true
 
 # 日常
 - [公众号](https://mp.weixin.qq.com/)：微信公众平台。
-- [PS4会免领取](https://store.playstation.com/zh-hans-hk/grid/STORE-MSF86012-PLUS_FTT_CONTENT/1?emcid=em-pl-170768&utm_campaign=&utm_content=Plus_Monthly_Games&utm_medium=Email&utm_source=&utm_term=em-pl-170768)：会免游戏领取。
-- [华为云盘](https://cloud.huawei.com/home#/collection?type=0&path=%2F)：手机云存储。
-- [腾讯文档](https://docs.qq.com/desktop/)：部分文档同步。
+- [PS4会免领取](https://www.playstation.com/zh-hant-hk/ps-plus/this-month-on-ps-plus/)：会免游戏领取。
+- [坚果云](https://www.jianguoyun.com/#/)：云盘。
 
 # 工具
 - [在线汉语字典](http://xh.5156edu.com/bs.php)：查汉字词。
@@ -24,6 +23,7 @@ show_edit_on_github: true
 - [Convertio](https://convertio.co/zh/webm-converter/)：在线转化几乎所有格式，包括webm转化。
 - [md转适配微信公众号](http://blog.didispace.com/tools/online-markdown/)：markdown转微信公众号格式。
 - [word转markdown](https://word2md.com/)：在线word转markdown，文件名不能用中文。
+- [小说写作生成器](https://www.xuanpai.com/makers/index/all?page=1)：自定义的写作生成器。
 
 # 游戏
 - [shorttrip](https://alexanderperrin.com.au/paper/shorttrip/)：一个开火车的游戏，可在线玩。
@@ -68,6 +68,7 @@ show_edit_on_github: true
 - [Y分钟语言速成](https://www.kancloud.cn/kancloud/learnxinyminutes/58941)：快速语言学习。
 - [Pygame文档](http://www.pygame.org/docs/ref/key.html)：Pygame的官方文档。
 - [TIOBE](https://www.tiobe.com/tiobe-index/)：TIOBE语言排名。
+- [linux命令大全](https://ipcmen.com/author/chinacnd)：linux命令及在线模拟器。
 
 ## 文章
 - [杀毒软件免杀](https://www.tuicool.com/articles/22qYji)：如何利用十行代码，绕过杀毒软件实现免杀？
@@ -108,6 +109,7 @@ show_edit_on_github: true
 # 文学
 - [古诗文搜索](https://so.gushiwen.org/shiwen/)：关键字快速检索古诗文。
 - [古文检索](http://www.gxbd.com/index.php)：检索全部古文文献。
+- [子夜星](http://www.ziyexing.com/)：偏文学类书籍在线阅读检索。
 
 # 历史
 - [各少数民族历史](http://cbrx.0715.cn/thread-591327-1-1.html)：匈奴、东胡 、突厥 、蒙古、 契丹 、女真 …终于全部搞懂了！
@@ -117,3 +119,4 @@ show_edit_on_github: true
 - [中国历代人物传记资料库](https://projects.iq.harvard.edu/chinesecbdb)：检索各类历史知识的数据库
 - [ChinaKnowledge](http://www.chinaknowledge.de/)：中国历史文化资料库
 - [全历史时间地图](https://www.allhistory.com/map)：跨地域历史事件展示及其它
+- [历史人物查询](http://www.guoxuedashi.com/renwu/)：国学大师历史人物查询，9万条
