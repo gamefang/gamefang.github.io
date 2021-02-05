@@ -120,3 +120,4 @@ show_edit_on_github: true
 - [ChinaKnowledge](http://www.chinaknowledge.de/)：中国历史文化资料库
 - [全历史时间地图](https://www.allhistory.com/map)：跨地域历史事件展示及其它
 - [历史人物查询](http://www.guoxuedashi.com/renwu/)：国学大师历史人物查询，9万条
+- [古泉学府](https://m.sohu.com/media/120082786?spm=smwp.content.author-info.1.1612530846290YmPzuKt)：古代钱币研究
