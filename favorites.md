@@ -43,6 +43,7 @@ show_edit_on_github: true
 - [YEP插件教程](https://www.bilibili.com/video/av3727626/?p=21)：Yanfly插件教学视频。
 - [Renpy中文空间](https://www.renpy.cn/forum.php)：Renpy中文论坛。
 - [Fungus游戏框架](https://fungusgames.com/)：Unity冒险游戏框架。
+- [游戏开发插件之家](https://gamedevplugins.com/)：Unity插件介绍。
 
 # 素材
 - [100font](https://www.100font.com/)：收集所有免费商用字体。
@@ -69,6 +70,7 @@ show_edit_on_github: true
 - [Pygame文档](http://www.pygame.org/docs/ref/key.html)：Pygame的官方文档。
 - [TIOBE](https://www.tiobe.com/tiobe-index/)：TIOBE语言排名。
 - [linux命令大全](https://ipcmen.com/author/chinacnd)：linux命令及在线模拟器。
+- [Zenva Academy](https://academy.zenva.com/my-courses/)：游戏、编程等学习网站。
 
 ## 文章
 - [杀毒软件免杀](https://www.tuicool.com/articles/22qYji)：如何利用十行代码，绕过杀毒软件实现免杀？
