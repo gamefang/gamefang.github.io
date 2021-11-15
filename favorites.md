@@ -53,6 +53,10 @@ show_edit_on_github: true
 - [resdiy](https://www.resdiy.com/)：2D角色场景UI在线生成，类似纸娃娃。唤境引擎出品，目前全部收费。
 - [icons8](https://icons8.com/icons/pack/cultures)：在线图标素材。
 - [unsplash](https://unsplash.com/)：免费图片库。
+- [kenney](https://kenney.nl/)：優質成套素材庫，部分免費。
+- [craftpix.net](https://craftpix.net/freebies/page/15/)：2D素材，有部分免費。
+- [gamedevmarket](https://www.gamedevmarket.net/category/2d/?type=free)：游戲素材市場，有部分免費。
+- [100AUDIO](https://100audio.com/sound-search/?fwp_download_tags=6627a2d5c5f1930acbe4f08b949e4dee)：音樂音效資源，音效可免費下載。
 
 
 # 编程
