@@ -27,6 +27,7 @@ show_edit_on_github: true
 
 # 游戏
 - [shorttrip](https://alexanderperrin.com.au/paper/shorttrip/)：一个开火车的游戏，可在线玩。
+- [猜人游戲](https://cn.akinator.mobi/game)：類似中活男的AI大數據猜人游戲。
 - [在线七巧板](http://www.puzzle8.com/tangram/index_1_160.html)：各类在线七巧板游戏。
 - [孢子游戏原型](http://www.spore.com/comm/prototypes)：含多个孢子游戏原型源文件。
 - [游戏本体论](https://www.gameontology.com/index.php/Main_Page)：游戏本体论WIKI页。
