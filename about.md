@@ -32,6 +32,7 @@ key: page-about
 
 # 友情链接
 - [Evilwind Studio](http://evilwind.fun/)：妖风工作室，主要致力于独立游戏开发。
+- [双生火焰](/game/twinflames/index.html)：双生火焰，网页版小游戏。
 
 # 关于本人
 - 原文艺青年，原游戏开发者。
