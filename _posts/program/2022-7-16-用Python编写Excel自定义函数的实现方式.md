@@ -28,7 +28,7 @@ show_title: false
 - 此时左侧显示的路径，新的Basic脚本应位于My Macros & Dialogs/Standard/PythonBridge
 - 在右侧代码中直接粘贴以下内容，用于实现Python脚本的桥接。桥接一次创建，终身有效。（此处代码参考：[此回答](https://stackoverflow.com/questions/7591656/how-can-i-call-a-python-macro-in-a-cell-formula-in-openoffice-org-calc)）
 
-```basic
+```vb
 ' 用于桥接python脚本的basic语言模块，注册后可实现python自定义函数
 
 REM Keep a global reference to the ScriptProvider, since this stuff may be called many times: 
@@ -90,7 +90,7 @@ def func_two(a,b=1):
     - invokePyFunc的第二个参数，填写选定Python脚本中的函数名
     - 如函数无参数，则所有value处留空
 
-```basic
+```vb
 ' 配置项：python脚本的名称
 Const py_fn as String = "test"
 
@@ -102,7 +102,7 @@ End Function
 
 - 如自定义函数参数为多个，且後续函数为可选，则模版如下：
 
-```basic
+```vb
 Function func_two(a, Optional b)	' 需要统一函数名与函数参数，标记是否可选（但Calc的Basic不支持参数默认值，不能像Excel VBA中直接赋值）
 	If IsMissing(b) Then    ' 此处语句用于设置默认值，弥补参数默认值的功能
 		b = 1
