@@ -75,17 +75,20 @@ End Function
 ```py
 def func_test(v):
     return v*2
+
+def func_two(a,b=1):
+    return a+b
 ```
 
 - 测试脚本的正确性，保存即可。
 
 ### 2.3 自定义函数注册
 - 返回Calc，通过宏进入LibreOffice Basic界面，打开Basic脚本PythonBridge。
-- 注册Python自定义函数，模版如下：
+- 注册Python自定义函数，如仅有一个参数，则模版如下：
     - py_fn为Python脚本的文件名，无须後缀
     - Basic中的Function名，为Calc中实际使用的公式名
     - invokePyFunc的第二个参数，填写选定Python脚本中的函数名
-    - 综上，仅需注册文件名及函数名，参数不用考虑
+    - 如函数无参数，则所有value处留空
 
 ```basic
 ' 配置项：python脚本的名称
@@ -97,10 +100,24 @@ Function func_test(value)	' 修改项1：函数、返回值的名称(func_test)�
 End Function
 ```
 
+- 如自定义函数参数为多个，且後续函数为可选，则模版如下：
+
+```basic
+Function func_two(a, Optional b)	' 需要统一函数名与函数参数，标记是否可选（但Calc的Basic不支持参数默认值，不能像Excel VBA中直接赋值）
+	If IsMissing(b) Then    ' 此处语句用于设置默认值，弥补参数默认值的功能
+		b = 1
+	End If
+    func_two = invokePyFunc(py_fn, "func_two", Array(a,b), Array(), Array())	' 需要统一函数名，并在第一个Array中放入所有参数
+End Function
+```
+
 - 如需查看Basic代码的文件，可进入如下位置：
     - ...Users\XXXX\AppData\Roaming\LibreOffice\4\user\basic\Standard\PythonBridge.xba
     - xba是xml化的Basic格式，如导入导出Basic源代码，可使用LibreOffice Basic中的相关功能。
 
 ### 2.4 使用
 - 进入Calc，使用方法与内置函数完全相同。如在单元格内输入：=FUNC_TEST(2)，则返回值为4。
+- 多个参数时，需按顺序输入各参数，或保留可选参数为空。
+    - =FUNC_TWO(1) -> 2
+    - =FUNC_TWO(2,3) -> 5
 - 以上方法的自定义函数，可在本地Calc的任意文件中随时使用。在其它电脑或使用Excel的条件下，会变为名称错误，如需传递可提前粘贴为数值。
