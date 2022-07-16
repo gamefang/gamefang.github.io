@@ -58,6 +58,7 @@ show_edit_on_github: true
 - [craftpix.net](https://craftpix.net/freebies/page/15/)：2D素材，有部分免費。
 - [gamedevmarket](https://www.gamedevmarket.net/category/2d/?type=free)：游戲素材市場，有部分免費。
 - [100AUDIO](https://100audio.com/sound-search/?fwp_download_tags=6627a2d5c5f1930acbe4f08b949e4dee)：音樂音效資源，音效可免費下載。
+- [artbreeder](https://www.artbreeder.com/)：在线使用AI杂交、调整各类图片。
 
 
 # 编程
@@ -128,3 +129,4 @@ show_edit_on_github: true
 - [全历史时间地图](https://www.allhistory.com/map)：跨地域历史事件展示及其它
 - [历史人物查询](http://www.guoxuedashi.com/renwu/)：国学大师历史人物查询，9万条
 - [古泉学府](https://m.sohu.com/media/120082786?spm=smwp.content.author-info.1.1612530846290YmPzuKt)：古代钱币研究
+- [兩千年中西曆轉換](https://sinocal.sinica.edu.tw/)：轉化各類歷法，僅限公元後年份
