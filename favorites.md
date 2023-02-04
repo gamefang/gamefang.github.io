@@ -11,7 +11,12 @@ show_edit_on_github: true
 
 # 日常
 - [公众号](https://mp.weixin.qq.com/)：微信公众平台。
-- [PS4会免领取](https://www.playstation.com/zh-hant-hk/ps-plus/this-month-on-ps-plus/)：会免游戏领取。
+- [PS4会免领取](https://www.playstation.com/zh-hant-hk/ps-plus/whats-new/)：会免游戏领取。
+	- [2级免费目录](https://store.playstation.com/zh-hans-hk/category/05a2d027-cedc-4ac0-abeb-8fc26fec7180/1)
+- 引擎资源
+	- [unity asset store](https://assetstore.unity.com/)
+	- [ue4 store](https://www.unrealengine.com/marketplace/zh-CN/store)
+	- [humble bundle](https://www.humblebundle.com/bundles)
 - [坚果云](https://www.jianguoyun.com/#/)：云盘。
 
 # 工具
