@@ -35,7 +35,7 @@ key: page-about
 - [双生火焰](/game/twinflames/index.html)：双生火焰，网页版小游戏。
 
 # 关于本人
-- 原文艺青年，原游戏开发者。
+- 文艺青年，游戏开发者。
 - E-mail: zchaeng@gmail.com
 - 虽然饿不死，但尊重他人付费的权力：
 
