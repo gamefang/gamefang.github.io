@@ -30,10 +30,6 @@ key: page-about
 - 引擎：[Jekyll](https://github.com/jekyll/jekyll)
 - 模版：[TeXt Theme](https://tianqi.name/jekyll-TeXt-theme/docs/zh/quick-start)
 
-# 友情链接
-- [Evilwind Studio](http://evilwind.fun/)：妖风工作室，主要致力于独立游戏开发。
-- [双生火焰](/game/twinflames/index.html)：双生火焰，网页版小游戏。
-
 # 关于本人
 - 文艺青年，游戏开发者。
 - E-mail: zchaeng@gmail.com
