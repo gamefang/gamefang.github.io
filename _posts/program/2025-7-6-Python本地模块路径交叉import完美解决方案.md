@@ -65,3 +65,24 @@ python folder1/folder2/test.py
 
 pause
 ```
+
+## sh
+- 同时适用于win和linux环境的shell脚本
+    - win直接双击使用（需要git）
+    - linux需要先`chmod +x ./xxx.sh`
+
+```sh
+#!/bin/bash
+# run on linux:
+# chmod +x ./easyhttp.sh
+# ./easyhttp.sh
+
+cd ..
+
+export PYTHONPATH="$PWD"
+echo "$PWD"
+python ./server/easyhttp.py
+
+echo "Press any key to exit..."
+read -n 1
+```
