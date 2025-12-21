@@ -1,0 +1,15 @@
+<!-- 實現本地static目錄下圖片索引的正確渲染 -->
+
+{{- $destination := .Destination -}}
+
+{{- /* 1. 檢查路徑是否以 '/static/' 開頭 */ -}}
+{{- if strings.HasPrefix $destination "/static/" -}}
+  {{- /* 如果是，則將 '/static' 前綴替換為根路徑 '/' */ -}}
+  {{- $destination = strings.TrimPrefix "/static" $destination -}}
+{{- end -}}
+
+{{- /* 2. 確保鏈接被正確 URL 編碼，處理空格（%20）等問題 */ -}}
+<img src="{{ $destination | safeURL }}"
+  {{- with .Text }} alt="{{ . }}"{{ end -}}
+  {{- with .Title }} title="{{ . }}"{{ end -}}
+>

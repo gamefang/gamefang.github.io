@@ -1,0 +1,41 @@
+<!-- 實現本地內部markdown文件鏈接的自動轉換 -->
+ 
+{{- /* 1. 解析鏈接目標 */ -}}
+{{- $u := urls.Parse .Destination -}}
+
+{{- /* 2. 判斷是否為內部鏈接且以 .md 結尾 */ -}}
+{{- $isLocal := not $u.IsAbs -}}
+{{- $isMarkdown := strings.HasSuffix $u.Path ".md" -}}
+
+{{- /* 3. 定義最終鏈接變量 */ -}}
+{{- $destination := .Destination -}}
+
+{{- /* 4. 如果是本地 .md 文件，嘗試獲取對應頁面 */ -}}
+{{- if and $isLocal $isMarkdown -}}
+  {{- /* 嘗試獲取頁面對象，這裡直接用路徑查找 */ -}}
+  {{- $page := .Page.GetPage $u.Path -}}
+  
+  {{- if $page -}}
+    {{- /* 如果找到了頁面，使用 Hugo 生成的永久鏈接 (RelPermalink) */ -}}
+    {{- $destination = $page.RelPermalink -}}
+    {{- /* 如果原鏈接帶有錨點（#...），把它加回去 */ -}}
+    {{- if $u.Fragment -}}
+      {{- $destination = print $destination "#" $u.Fragment -}}
+    {{- end -}}
+  {{- else -}}
+    {{- /* 如果沒找到頁面對象（可能是路徑問題），作為備用方案，簡單暴力去除 .md */ -}}
+    {{- $newPath := strings.TrimSuffix ".md" $u.Path -}}
+    {{- $destination = print $newPath -}}
+    {{- if $u.Fragment -}}
+      {{- $destination = print $destination "#" $u.Fragment -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* 5. 輸出標準 HTML 鏈接標籤 */ -}}
+<a href="{{ $destination | safeURL }}"
+  {{- with .Title }} title="{{ . }}"{{ end -}}
+  {{- if not $isLocal }} target="_blank" rel="noopener"{{ end -}}
+>
+  {{- .Text | safeHTML -}}
+</a>

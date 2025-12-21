@@ -1,0 +1,54 @@
+# Hugo配置
+## 網站根URL
+baseURL = '/'
+## 網站標題
+title = 'GAMEFANG'
+## 使用主題
+theme = 'hugo-book'
+## 網站語言
+languageCode = "zh-tw"
+## 中文內容優化
+hasCJKLanguage = true
+## 版權腳標
+copyright = "[© gamefang](https://gamefang.fun)"
+## 啓用Git信息
+enableGitInfo = true
+
+[markup]
+[markup.goldmark.renderer]
+  ## 啟用 Unsafe 模式，允許渲染原始 HTML 標籤 (如 <details>, <span> 等)
+  unsafe = true
+
+# Hugo Book 配置
+[params]
+  ## 主題方案: light/dark/auto
+  BookTheme = 'light'
+  ## 網站描述
+  BookDescription = 'Gamefang個人主頁'
+
+  ## 當前倉庫地址
+  BookRepo = 'https://github.com/gamefang/gamefang.github.io/'
+  ## 編輯當前頁面鏈接
+  BookEditLink = '{{ .Site.Params.BookRepo }}/edit/main/{{ .Path }}'
+  ## 最後修改時間
+  BookLastChangeLink = '{{ .Site.Params.BookRepo }}/commit/{{ .GitInfo.Hash }}'
+  ## 修改時間格式
+  BookDateFormat = '2006-01-02 15:04:05'
+
+  ## 是否顯示右側文檔結構目錄（默認開啓）
+  # BookToC = true
+  ## 是否啓用搜索功能（默認開啓）
+  # BookSearch = true
+  ## md渲染目錄，*表示渲染所有content下的md文件
+  BookSection = '*'
+  ## md渲染目錄遞歸深度
+  BookMenuLevels = 5
+
+[frontmatter]
+  # lastmod 的获取顺序：
+  # 1. :git (Git 提交时间)
+  # 2. lastmod (文章头部手动写的 lastmod 字段)
+  # 3. date (文章头部手动写的 date 字段)
+  # 4. :fileModTime (文件在磁盘上的修改时间)
+  date = ["date", "publishDate", "lastmod"]
+  lastmod = [":git", "lastmod", "date", ":fileModTime"]
